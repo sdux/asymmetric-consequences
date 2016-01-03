@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Google Visualization API Sample</title>
+<!--
+  One script tag loads all the required libraries! Do not specify any chart types in the
+  autoload statement.
+-->
+<script type="text/javascript"
+      src='https://www.google.com/jsapi?autoload={
+        "modules":[{
+        "name":"visualization",
+        "version":"1"
+        }]
+      }'></script>
+<script type="text/javascript">
+  google.setOnLoadCallback(drawVisualization);
+
+  function drawVisualization() {
+    var wrap = new google.visualization.ChartWrapper({
+       'chartType':'AreaChart',
+       'dataSourceUrl':'https://docs.google.com/spreadsheets/d/1j55apMQevZzn9DOgugHmwIlqo5N9_3MNARiexLcT_4E/edit#gid=0',
+       'containerId':'visualization',
+       'options': {'isStacked': true,'title':'Production by Year', 'legend':'true'}
+       });
+     wrap.draw();
+  }
+</script>
+</head>
+<body>
+  <div id="visualization" style="height: 40%; width: 40%;"></div>
+
+<p> text </p>
+</body>
+</html>
